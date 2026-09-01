@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og.png',
-        width: 1731,
-        height: 909,
-        alt: 'The Broken Year — Roads. Seasons. Promises.',
+        url: '/assets/hero.png',
+        width: 1717,
+        height: 916,
+        alt: 'The Broken Year landscape and tower beneath a golden moon.',
       },
     ],
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: 'The Broken Year',
     description:
       'Roads. Seasons. Promises. Enter the epic-fantasy world of The Broken Year.',
-    images: ['/og.png'],
+    images: ['/assets/hero.png'],
   },
 };
 
