@@ -3636,3 +3636,26 @@ input {
     width: 100%;
   }
 }
+
+/* Keep the mobile navigation above every hero layer and fully opaque. */
+@media (max-width: 1120px) {
+  .hero > .site-header,
+  .author-page-hero > .site-header,
+  .world-page-hero > .site-header,
+  .pilgrims-page-hero > .site-header {
+    z-index: 100;
+  }
+
+  .mobile-nav {
+    isolation: isolate;
+  }
+
+  .mobile-nav nav {
+    z-index: 1;
+    background: #020b10;
+  }
+
+  .world-page-hero:has(.mobile-nav[open]) {
+    overflow: visible;
+  }
+}
