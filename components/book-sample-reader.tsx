@@ -18,6 +18,22 @@ type BookSampleReaderProps = {
   title: string;
 };
 
+const MOBILE_SAMPLE_QUERY = '(max-width: 640px)';
+
+function subscribeToMobileSampleView(callback: () => void) {
+  const query = window.matchMedia(MOBILE_SAMPLE_QUERY);
+  query.addEventListener('change', callback);
+  return () => query.removeEventListener('change', callback);
+}
+
+function getMobileSampleView() {
+  return window.matchMedia(MOBILE_SAMPLE_QUERY).matches;
+}
+
+function getServerMobileSampleView() {
+  return false;
+}
+
 export function BookSampleReader({
   firstPage,
   lastPage,
@@ -25,18 +41,39 @@ export function BookSampleReader({
   title,
 }: BookSampleReaderProps) {
   const [open, setOpen] = React.useState(false);
-  const [spreadIndex, setSpreadIndex] = React.useState(0);
-  const spreadCount = Math.ceil((lastPage - firstPage + 1) / 2);
-  const leftPage = firstPage + spreadIndex * 2;
-  const rightPage = Math.min(leftPage + 1, lastPage);
+  const [pageOffset, setPageOffset] = React.useState(0);
+  const isSinglePage = React.useSyncExternalStore(
+    subscribeToMobileSampleView,
+    getMobileSampleView,
+    getServerMobileSampleView,
+  );
+  const totalPages = lastPage - firstPage + 1;
+  const pagesPerView = isSinglePage ? 1 : 2;
+  const viewCount = Math.ceil(totalPages / pagesPerView);
+  const viewIndex = Math.min(
+    Math.floor(pageOffset / pagesPerView),
+    viewCount - 1,
+  );
+  const firstVisiblePage = firstPage + viewIndex * pagesPerView;
+  const visiblePages = Array.from(
+    { length: Math.min(pagesPerView, lastPage - firstVisiblePage + 1) },
+    (_, index) => firstVisiblePage + index,
+  );
+  const viewLabel = isSinglePage ? 'Page' : 'Spread';
 
   const showPrevious = React.useCallback(() => {
-    setSpreadIndex((current) => Math.max(0, current - 1));
-  }, []);
+    setPageOffset((current) => {
+      const currentView = Math.floor(current / pagesPerView);
+      return Math.max(0, currentView - 1) * pagesPerView;
+    });
+  }, [pagesPerView]);
 
   const showNext = React.useCallback(() => {
-    setSpreadIndex((current) => Math.min(spreadCount - 1, current + 1));
-  }, [spreadCount]);
+    setPageOffset((current) => {
+      const currentView = Math.floor(current / pagesPerView);
+      return Math.min(viewCount - 1, currentView + 1) * pagesPerView;
+    });
+  }, [pagesPerView, viewCount]);
 
   React.useEffect(() => {
     if (!open) return;
@@ -52,11 +89,8 @@ export function BookSampleReader({
 
   function handleOpenChange(nextOpen: boolean) {
     setOpen(nextOpen);
-    if (nextOpen) setSpreadIndex(0);
+    if (nextOpen) setPageOffset(0);
   }
-
-  const visiblePages =
-    leftPage === rightPage ? [leftPage] : [leftPage, rightPage];
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -90,7 +124,8 @@ export function BookSampleReader({
         <div className="sample-reader-stage">
           <div
             className="sample-reader-spread"
-            aria-label={`${title}, spread ${spreadIndex + 1} of ${spreadCount}`}
+            role="group"
+            aria-label={`${title}, ${viewLabel.toLowerCase()} ${viewIndex + 1} of ${viewCount}`}
           >
             {visiblePages.map((page) => (
               <figure className="sample-reader-page" key={page}>
@@ -111,22 +146,22 @@ export function BookSampleReader({
           <button
             type="button"
             onClick={showPrevious}
-            disabled={spreadIndex === 0}
-            aria-label="Previous two pages"
+            disabled={viewIndex === 0}
+            aria-label={`Previous ${viewLabel.toLowerCase()}`}
           >
             <ChevronLeft aria-hidden="true" />
-            <span>Previous spread</span>
+            <span>Previous {viewLabel.toLowerCase()}</span>
           </button>
           <p aria-live="polite">
-            Spread {spreadIndex + 1} of {spreadCount}
+            {viewLabel} {viewIndex + 1} of {viewCount}
           </p>
           <button
             type="button"
             onClick={showNext}
-            disabled={spreadIndex === spreadCount - 1}
-            aria-label="Next two pages"
+            disabled={viewIndex === viewCount - 1}
+            aria-label={`Next ${viewLabel.toLowerCase()}`}
           >
-            <span>Next spread</span>
+            <span>Next {viewLabel.toLowerCase()}</span>
             <ChevronRight aria-hidden="true" />
           </button>
         </footer>

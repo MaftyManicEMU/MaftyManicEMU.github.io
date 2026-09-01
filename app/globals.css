@@ -953,9 +953,15 @@ input {
   }
   .sample-reader-stage {
     padding: 6px;
+    background: radial-gradient(
+      circle at 50% 45%,
+      rgba(22, 61, 63, 0.24),
+      transparent 65%
+    );
   }
   .sample-reader-spread {
-    gap: 4px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
   }
   .sample-reader-controls {
     min-height: 54px;
