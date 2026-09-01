@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/assets/hero.png',
-        width: 1717,
-        height: 916,
-        alt: 'The Broken Year landscape and tower beneath a golden moon.',
+        url: '/social-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'The Broken Year logo over a dark mountain city beneath a golden moon.',
       },
     ],
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: 'The Broken Year',
     description:
       'Roads. Seasons. Promises. Enter the epic-fantasy world of The Broken Year.',
-    images: ['/assets/hero.png'],
+    images: ['/social-preview.png'],
   },
 };
 
