@@ -59,7 +59,7 @@ const comingSoon = [
     image: '/assets/burning-promise.png',
     alt: 'Cover of The Burning Promise',
     copy: [
-      'A thousand years before the year broke, a boy, a monk, and a bard become unlikely travelers in the making of a promise meant to protect generations—and perhaps end an age.',
+      'Three centuries before the year broke, a boy, a monk, and a bard become unlikely travelers in the making of a promise meant to protect generations—and perhaps end an age.',
     ],
   },
   {

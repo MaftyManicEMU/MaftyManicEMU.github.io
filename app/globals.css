@@ -1566,7 +1566,7 @@ input {
 }
 
 .socials .social-icon-fill,
-.socials .x-mark path {
+.socials .tiktok-mark path {
   fill: currentColor;
   stroke: none;
 }
@@ -1576,9 +1576,9 @@ input {
   height: 20px;
 }
 
-.socials .x-mark {
-  width: 25.5px;
-  height: 25.5px;
+.socials .tiktok-mark {
+  width: 22.5px;
+  height: 22.5px;
 }
 
 .copyright {

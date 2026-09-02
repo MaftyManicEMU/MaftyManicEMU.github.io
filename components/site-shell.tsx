@@ -106,20 +106,30 @@ export function SiteFooter() {
         <a href="/#books" aria-label="Amazon">
           <AmazonBrandIcon className="social-icon amazon-brand" />
         </a>
-        <a href="/#contact" aria-label="Instagram">
+        <a
+          href="https://www.instagram.com/thebrokenyear?utm_source=qr"
+          aria-label="Instagram"
+          target="_blank"
+          rel="noreferrer"
+        >
           <svg className="social-icon" viewBox="0 0 24 24" aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="5" />
             <circle cx="12" cy="12" r="4.2" />
             <circle className="social-icon-fill" cx="17.45" cy="6.6" r="1.1" />
           </svg>
         </a>
-        <a href="/#contact" aria-label="X">
+        <a
+          href="https://www.tiktok.com/@the.broken.year"
+          aria-label="TikTok"
+          target="_blank"
+          rel="noreferrer"
+        >
           <svg
-            className="social-icon x-mark"
+            className="social-icon tiktok-mark"
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
-            <path d="M4 3.5h4.4l4.77 6.38L18.7 3.5H20l-6.23 7.28 6.73 9.72h-4.4l-5.12-6.86L5.1 20.5H3.8l6.58-7.75L4 3.5Zm3.68 1.4 9.1 14.2h2.03L9.7 4.9H7.68Z" />
+            <path d="M12.53.02c1.3-.02 2.6-.01 3.9-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.08 2.7 1.57 4.24 1.74v4.03a9.92 9.92 0 0 1-4.2-.97c-.57-.27-1.1-.61-1.62-.93-.01 2.92.01 5.84-.02 8.75a7.2 7.2 0 0 1-1.35 3.94 7.37 7.37 0 0 1-5.91 3.21 7.06 7.06 0 0 1-4.08-1.03 7.42 7.42 0 0 1-3.65-5.72c-.02-.5-.03-1-.01-1.48a7.47 7.47 0 0 1 2.58-4.96 7.15 7.15 0 0 1 6.15-1.72c.02 1.48-.04 2.96-.04 4.44a3.23 3.23 0 0 0-3.02.37 3.12 3.12 0 0 0-1.36 1.75c-.21.51-.15 1.07-.14 1.61a3.4 3.4 0 0 0 3.5 2.87 3.5 3.5 0 0 0 2.77-1.61c.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.03-12.07Z" />
           </svg>
         </a>
       </div>
