@@ -1508,20 +1508,11 @@ input {
   min-width: 0;
 }
 
-.newsletter-note {
-  display: block;
-  margin: 8px 0 0;
-  color: var(--cream);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
 .newsletter-provider {
   color: var(--gold-bright);
   text-underline-offset: 4px;
+  white-space: nowrap;
 }
-
-.newsletter-signoff { white-space: nowrap; }
 
 .newsletter-signup .formkit-alert {
   margin: 0 0 12px;

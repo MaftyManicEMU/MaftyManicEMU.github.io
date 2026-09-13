@@ -281,7 +281,7 @@ export default function Home() {
         </div>
         <div className="newsletter-copy">
           <h2>Walk the road. Get the letters.</h2>
-          <p>News, lore drops, and behind-the-scenes stories.</p>
+          <p>News, lore drops, and behind-the-scenes stories. · <a className="newsletter-provider" href="https://kit.com/features/forms" target="_blank" rel="noopener noreferrer">Built with Kit</a></p>
         </div>
         <NewsletterForm />
         <div className="newsletter-mark" aria-hidden="true">

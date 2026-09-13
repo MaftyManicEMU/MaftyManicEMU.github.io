@@ -45,15 +45,11 @@ export function NewsletterForm() {
         <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert" role="alert" />
         <div className="newsletter-form formkit-fields" data-element="fields">
           <label className="sr-only" htmlFor="reader-email">Email address</label>
-          <input id="reader-email" className="formkit-input" name="email_address" type="email" autoComplete="email" placeholder="Enter your email" required aria-describedby="newsletter-consent" />
+          <input id="reader-email" className="formkit-input" name="email_address" type="email" autoComplete="email" placeholder="Enter your email" required />
           <button type="submit" className="formkit-submit" data-element="submit">
             <span>Join the road</span>
           </button>
         </div>
-        <p className="newsletter-note" id="newsletter-consent">
-          Get news, lore, and book updates from M. Laurence Scott. Confirm by email;{' '}
-          <span className="newsletter-signoff">unsubscribe anytime. · <a className="newsletter-provider" href="https://kit.com/features/forms" data-element="powered-by" target="_blank" rel="noopener noreferrer">Built with Kit</a></span>
-        </p>
       </form>
     </div>
   );
