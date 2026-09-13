@@ -1503,33 +1503,38 @@ input {
   letter-spacing: 0.04em;
 }
 
-.footer-contact {
-  grid-column: 1 / -1;
-  margin: 0;
-  color: var(--cream);
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.6;
-  overflow-wrap: anywhere;
-}
-
-.footer-contact a {
-  color: var(--gold-bright);
-  text-underline-offset: 4px;
-}
-
-.newsletter-pending {
-  margin: 0;
+.newsletter-signup {
   padding: 14px 0;
   min-width: 0;
-  color: var(--cream);
-  font-size: 14px;
-  line-height: 1.6;
 }
 
-.newsletter-pending a {
+.newsletter-note, .newsletter-provider {
+  display: block;
+  margin: 8px 0 0;
+  color: var(--cream);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.newsletter-provider {
   color: var(--gold-bright);
   text-underline-offset: 4px;
+}
+
+.newsletter-signup .formkit-alert {
+  margin: 0 0 12px;
+  padding: 12px;
+  list-style: none;
+  border: 1px solid var(--gold-deep);
+  color: var(--ivory);
+  font-size: 14px;
+}
+
+.newsletter-signup .formkit-alert:empty { display: none; }
+.newsletter-signup .formkit-alert-error:not(:empty) { border-color: #c46d54; }
+.newsletter-signup button[disabled], .newsletter-signup button[data-active] {
+  opacity: 0.65;
+  cursor: wait;
 }
 
 .site-footer {

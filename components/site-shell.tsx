@@ -133,9 +133,6 @@ export function SiteFooter() {
           </svg>
         </a>
       </div>
-      <p className="footer-contact">
-        Contact M. Laurence Scott: <a href="mailto:mlaurencescott@thebrokenyear.com">mlaurencescott@thebrokenyear.com</a>
-      </p>
       <p className="copyright">
         <span aria-hidden="true" />◇ © 2026 M. Laurence Scott. All rights
         reserved. ◇<span aria-hidden="true" />
