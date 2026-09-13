@@ -1508,7 +1508,7 @@ input {
   min-width: 0;
 }
 
-.newsletter-note, .newsletter-provider {
+.newsletter-note {
   display: block;
   margin: 8px 0 0;
   color: var(--cream);
@@ -1520,6 +1520,8 @@ input {
   color: var(--gold-bright);
   text-underline-offset: 4px;
 }
+
+.newsletter-signoff { white-space: nowrap; }
 
 .newsletter-signup .formkit-alert {
   margin: 0 0 12px;

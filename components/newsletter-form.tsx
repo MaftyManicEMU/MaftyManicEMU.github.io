@@ -51,9 +51,9 @@ export function NewsletterForm() {
           </button>
         </div>
         <p className="newsletter-note" id="newsletter-consent">
-          Get news, lore, and book updates from M. Laurence Scott. Confirm by email; unsubscribe anytime.
+          Get news, lore, and book updates from M. Laurence Scott. Confirm by email;{' '}
+          <span className="newsletter-signoff">unsubscribe anytime. · <a className="newsletter-provider" href="https://kit.com/features/forms" data-element="powered-by" target="_blank" rel="noopener noreferrer">Built with Kit</a></span>
         </p>
-        <a className="newsletter-provider" href="https://kit.com/features/forms" data-element="powered-by" target="_blank" rel="noopener noreferrer">Built with Kit</a>
       </form>
     </div>
   );
