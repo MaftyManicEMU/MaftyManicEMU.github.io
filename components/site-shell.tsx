@@ -103,7 +103,7 @@ export function SiteFooter() {
         ))}
       </nav>
       <div className="socials" aria-label="Social links">
-        <a href="https://www.amazon.com/author/mlaurencescott" aria-label="Amazon" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.amazon.com/dp/B0HJFHH4X8?binding=paperback&ref=dbs_dp_awt_sb_pc_tpbk" aria-label="The Broken Year series on Amazon" target="_blank" rel="noopener noreferrer">
           <AmazonBrandIcon className="social-icon amazon-brand" />
         </a>
         <a
