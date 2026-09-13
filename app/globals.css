@@ -1503,6 +1503,35 @@ input {
   letter-spacing: 0.04em;
 }
 
+.footer-contact {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--cream);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact a {
+  color: var(--gold-bright);
+  text-underline-offset: 4px;
+}
+
+.newsletter-pending {
+  margin: 0;
+  padding: 14px 0;
+  min-width: 0;
+  color: var(--cream);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.newsletter-pending a {
+  color: var(--gold-bright);
+  text-underline-offset: 4px;
+}
+
 .site-footer {
   min-height: 135px;
   display: grid;

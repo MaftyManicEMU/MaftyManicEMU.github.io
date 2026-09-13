@@ -10,6 +10,7 @@ import {
 const trilogy = [
   {
     id: 'the-chained-rain',
+    amazonUrl: 'https://a.co/d/0dZVbepZ',
     volume: '1',
     accent: 'red',
     title: 'The Chained Rain',
@@ -21,6 +22,7 @@ const trilogy = [
   },
   {
     id: 'the-hollow-season',
+    amazonUrl: 'https://a.co/d/046YDw2n',
     volume: '2',
     accent: 'green',
     title: 'The Hollow Season',
@@ -32,6 +34,7 @@ const trilogy = [
   },
   {
     id: 'the-last-godroad',
+    amazonUrl: 'https://a.co/d/07lz7PML',
     volume: '3',
     accent: 'gold',
     title: 'The Last Godroad',
@@ -95,7 +98,9 @@ export default function Home() {
             </a>
             <a
               className="button button-outline hero-amazon-button"
-              href="#contact"
+              href={trilogy[0].amazonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <AmazonBrandIcon className="amazon-button-mark" />
               <span>
@@ -140,7 +145,9 @@ export default function Home() {
                 <div className="book-cta-stack">
                   <a
                     className="book-cta book-cta-amazon"
-                    href="#contact"
+                    href={book.amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={`Buy ${book.title} on Amazon`}
                   >
                     <AmazonBrandIcon className="amazon-button-mark" />

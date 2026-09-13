@@ -1,28 +1,10 @@
-'use client';
-
-import { FormEvent, useState } from 'react';
-
 export function NewsletterForm() {
-  const [joined, setJoined] = useState(false);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setJoined(true);
-  }
-
-  if (joined) {
-    return (
-      <p className="newsletter-success" role="status">
-        Your place on the road is reserved.
-      </p>
-    );
-  }
-
+  // Restore email collection only after a real subscription provider is connected.
+  // Never display a successful signup without storing the subscription.
   return (
-    <form className="newsletter-form" onSubmit={handleSubmit}>
-      <label className="sr-only" htmlFor="reader-email">Email address</label>
-      <input id="reader-email" name="email" type="email" autoComplete="email" placeholder="Enter your email" required />
-      <button type="submit">Join the road</button>
-    </form>
+    <p className="newsletter-pending">
+      Newsletter signup is coming soon. In the meantime,{' '}
+      <a href="mailto:mlaurencescott@thebrokenyear.com">get in touch</a>.
+    </p>
   );
 }

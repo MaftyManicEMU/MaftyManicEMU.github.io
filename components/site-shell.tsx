@@ -103,7 +103,7 @@ export function SiteFooter() {
         ))}
       </nav>
       <div className="socials" aria-label="Social links">
-        <a href="/#books" aria-label="Amazon">
+        <a href="https://www.amazon.com/author/mlaurencescott" aria-label="Amazon" target="_blank" rel="noopener noreferrer">
           <AmazonBrandIcon className="social-icon amazon-brand" />
         </a>
         <a
@@ -133,6 +133,9 @@ export function SiteFooter() {
           </svg>
         </a>
       </div>
+      <p className="footer-contact">
+        Contact M. Laurence Scott: <a href="mailto:mlaurencescott@thebrokenyear.com">mlaurencescott@thebrokenyear.com</a>
+      </p>
       <p className="copyright">
         <span aria-hidden="true" />◇ © 2026 M. Laurence Scott. All rights
         reserved. ◇<span aria-hidden="true" />
